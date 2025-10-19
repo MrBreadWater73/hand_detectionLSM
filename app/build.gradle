@@ -4,7 +4,6 @@ plugins {
 
 android {
     compileSdk 29
-    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.example.imagepro"
@@ -26,20 +25,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    sourceSets {
-        main {
-            jni {
-                srcDirs 'src\\main\\jni', 'src\\main\\jnilibs'
-            }
-        }
-    }
 
-    aaptOptions {
-        noCompress "tflite"
-        noCompress "lite"
-    }
     buildFeatures {
         mlModelBinding true
+    }
+    namespace 'com.example.imagepro'
+    androidResources {
+        noCompress 'lite'
     }
 }
 
